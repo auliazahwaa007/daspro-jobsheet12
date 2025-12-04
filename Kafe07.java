@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Kafe07 {
     public static void Menu() {
 
@@ -18,9 +20,9 @@ public class Kafe07 {
             System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian!");
         }
          if (kodePromo.equals("DISKON50")) {
-            System.out.println("Kode promo: DISKON50 → Diskon 50%");
+            System.out.println("Kode promo: Diskon 50%");
         } else if (kodePromo.equals("DISKON30")) {
-            System.out.println("Kode promo: DISKON30 → Diskon 30%");
+            System.out.println("Kode promo: Diskon 30%");
         } else {
             System.out.println("Kode promo invalid");
         }
@@ -35,13 +37,32 @@ public class Kafe07 {
         System.out.println("===============================");
         System.out.println("Silahkan pilih menu yang anda inginkan.");
     }
-    public static void main(String[] args) {
-        Menu("Budi", true, "Diskon30");
-    }
+    //public static void main(String[] args) {
+      //  Menu("Budi", true, "Diskon30");
+    //}
     public static int hitungTotalHarga(int pilihanMenu, int banyakItem) {
         int[] hargaItem = {15000, 20000, 22000, 12000, 10000, 18000};
 
         int hargaTotal = hargaItem[pilihanMenu - 1] * banyakItem;
         return hargaTotal;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        Menu("Budi", true, "DISKON30");
+       // int pilihanMenu = 1;
+        //int banyakItem = 2;
+
+       // int totalBayar = hitungTotalHarga(pilihanMenu, banyakItem);
+
+        //System.out.println("Total harga: Rp " + totalBayar);
+        
+        System.out.print("\n Masukkan nomor menu yang ingin Anda pesan: ");
+        int pilihanMenu = sc.nextInt();
+        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+        int banyakItem = sc.nextInt();
+
+        int totalHarga = hitungTotalHarga(pilihanMenu, banyakItem);
+
+        System.out.println("Total harga untuk pesanan Anda: Rp" + totalHarga);
     }
 }
