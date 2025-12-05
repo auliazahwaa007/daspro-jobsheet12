@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Kubus07 {
     public static int hitungVolumeKubus (int a) {
-        int volume = a * a;
+        int volume = a * a * a;
         return volume;
     }
     
